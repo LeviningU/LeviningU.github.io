@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<style>
+	text{
+		text-align: center;
+        font-family: SimSun, serif;
+        color: #fff;
+        font-size: 50px;
+	}
+    h1 {
+        opacity: 0;
+        transform: translateY(100%);
+        animation: fadeIn 1s forwards;
+     	}
+  		@keyframes fadeIn 
+		{
+    	to 
+		{
+     	opacity: 1;
+     	transform: translateY(0);
+   		}
+  	}
+	.search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 55px;
+		width: 700px;
+		margin:0 auto;
+        background-color: #ffffff;
+        border-radius: 30px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 0 20px;
+      }
+
+      /* 搜索框输入框 */
+      .search-input {
+        flex: 1;
+        border: none;
+        font-size: 25px;
+		font-family: SimSun, serif;
+        outline: none;
+      }
+
+      /* 搜索框按钮 */
+      .search-button {
+        border: none;
+		background-color: #FFFFFF;
+        border-radius: 30px;
+        cursor: pointer;
+		font-size: 20px;
+		font-family: SimSun, serif;
+        padding: 6px 20px;
+        margin-left: 10px;
+      }
+	</style>
+</head>
+	
+<body background = "Rainbow Blue.jpg">
+	<text><h1>你好</h1></text>
+	<div class="search-container">
+      <input type="text" class="search-input" id="searchBox" onkeypress="handleKeyPress(event)" placeholder="搜索" />
+      <button type="button" class="search-button" onclick="search()">
+		  <img src="搜索.png" height="32" width="32" alt="搜索" style="background-color: transparent;"/></button>
+    </div>
+    <script>
+	  function handleKeyPress(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          search();
+        }
+	  }
+      function search() {
+        var query = document.getElementById("searchBox").value;
+        if (query == "me") {
+          window.location.href = "me.html";
+        } 
+		else if(query == "back") {
+          window.location.href = "../index.html";
+        }
+		  else {
+          window.location.href = "https://www.bing.com/search?q=" + query;
+        }
+      }
+    </script>
+</body>
+</html>

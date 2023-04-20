@@ -43,8 +43,6 @@
 		font-family: SimSun, serif;
         outline: none;
       }
-
-      /* 搜索框按钮 */
       .search-button {
         border: none;
 		background-color: #FFFFFF;
@@ -57,11 +55,11 @@
       }
 	</style>
 </head>
-	
-<body background = "Broken Hearts.jpg">
+    
+<body style = "background: linear-gradient(to right,#daa8c8,#fffddd)">
 	<text><h1>你好</h1></text>
 	<div class="search-container">
-      <input type="text" class="search-input" id="searchBox" onkeypress="handleKeyPress(event)" placeholder="搜索" />
+      <input type="text" class="search-input" id="searchBox" onkeypress="handleKeyPress(event)" placeholder="搜索" autocomplete="off"/>
       <button type="button" class="search-button" onclick="search()">
 		  <img src="搜索.png" height="32" width="32" alt="搜索" style="background-color: transparent;"/></button>
     </div>
@@ -79,6 +77,9 @@
         } 
 		else if(query == "back") {
           window.location.href = "../index.html";
+        }
+		else if(query == "web") {
+          window.location.href = "../web/web.html";
         }
 		  else {
           window.location.href = "https://www.bing.com/search?q=" + query;
